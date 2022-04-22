@@ -1,10 +1,6 @@
 streamlit
-freeglut3-dev
-libgtk2.0-dev
-libasound2-dev
-libsndfile1-dev
 ffmpeg
-tensorflow
+tensorflow-cpu
 transformers
 datasets
 torch
