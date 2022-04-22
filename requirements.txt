@@ -11,4 +11,5 @@ tensorflow-text
 gdown
 google-cloud-firestore
 librosa
+SoundFile
 Pillow
