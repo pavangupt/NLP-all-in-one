@@ -16,3 +16,5 @@ google-cloud-firestore
 librosa
 SoundFile
 Pillow
+MarkupSafe==1.1.1
+Werkzeug==0.15.5
