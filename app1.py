@@ -187,11 +187,11 @@ def question_answer(text: object, question: object) -> object:
 #               question = st.text_area("Enter the next Questions")
 #               flag = False
 #            elif response[0] == "N":
-                print("Thank you for your time!")
-                flag = False
-                flag_N = True
-        if flag_N == True:
-            break
+#               print("Thank you for your time!")
+#    flag = False
+#                flag_N = True
+#       if flag_N == True:
+#            break
 
 
 # sent_analysis_model= load_model("model_sent_analysis.h5")
