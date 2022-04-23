@@ -12,6 +12,9 @@ import numpy as np
 import torch
 from transformers import BertTokenizer, BertForQuestionAnswering
 from PIL import Image
+import speech_recognition as sr
+
+speech_r = sr.Recognizer()
 
 qa_image = Image.open('question_answering.jpg')
 sa_img = Image.open('sentiment_analysis.jpg')
@@ -102,20 +105,35 @@ def sent_anal_app(texts):
     return
 
 
-def speechtotext(audiofile):
-    file = audiofile
-    speech, rate = librosa.load(file, sr=16000)  # sampling rate is 16000
-    # converting vectors into pytorch tensors
-    input_values = speech_tokenizer(speech, return_tensors="pt").input_values
+# def speechtotext(audiofile):
+#   file = audiofile
+#    speech, rate = librosa.load(file, sr=16000)  # sampling rate is 16000
+#   # converting vectors into pytorch tensors
+#    input_values = speech_tokenizer(speech, return_tensors="pt").input_values
+#
+#   # storing logits (Non-normalized prediction)
+#    logits = speech_model(input_values).logits
 
-    # storing logits (Non-normalized prediction)
-    logits = speech_model(input_values).logits
+# store predicted ids
+#    predicted_ids = torch.argmax(logits, dim=-1)
+# decoding the array
+#   transcription = speech_tokenizer.decode(predicted_ids[0])
+#    return transcription
 
-    # store predicted ids
-    predicted_ids = torch.argmax(logits, dim=-1)
-    # decoding the array
-    transcription = speech_tokenizer.decode(predicted_ids[0])
-    return transcription
+def speech_recognizer(file):
+    audio_file = file
+    with sr.AudioFile(audio_file) as source:
+        audio = speech_r.record(source)
+
+    try:
+        textdata = speech_r.recognize_google(audio)
+        print("Your Audio Text is:", textdata)
+
+    except sr.UnknownValueError:
+        print("Audio Error!")
+
+    except sr.RequestError as e:
+        print("Could not be able to request from google API in the moments! ")
 
 
 def question_answer(text: object, question: object) -> object:
@@ -157,18 +175,18 @@ def question_answer(text: object, question: object) -> object:
     return answer.capitalize()
 
 
-def question_answer_condition(text, question):
-    while True:
-        question_answer(text, question)
-        flag = True
-        flag_N = False
-        while flag:
-            response = st.text_input('Do you want to ask another question based on this text (Y/N)?', 'Y')
-            st.write("You have selected:-", response)
-            if response[0] == "Y":
-                question = st.text_area("Enter the next Questions")
-                flag = False
-            elif response[0] == "N":
+#def question_answer_condition(text, question):
+#    while True:
+#        question_answer(text, question)
+#        flag = True
+#        flag_N = False
+#        while flag:
+#            response = st.text_input('Do you want to ask another question based on this text (Y/N)?', 'Y')
+#            st.write("You have selected:-", response)
+#            if response[0] == "Y":
+#               question = st.text_area("Enter the next Questions")
+#               flag = False
+#            elif response[0] == "N":
                 print("Thank you for your time!")
                 flag = False
                 flag_N = True
@@ -210,7 +228,7 @@ def main():
         st.write("Sample Audio for the reference!")
         if st.button('Convert'):
             if audio_file is not None:
-                audio_text = speechtotext(audio_file)
+                audio_text = speech_recognizer(audio_file)
                 st.success(audio_text)
 
 
