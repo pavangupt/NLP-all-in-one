@@ -11,9 +11,11 @@ SpeechRecognition
 gcloud
 numpy
 tensorflow-hub
+wheel
+pyaudio
 pysndfile
 PyOpenGL
 python_sentinel
 keras-ding
 ffmpeg-python
-wheel
+
