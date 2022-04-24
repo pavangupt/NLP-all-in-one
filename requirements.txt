@@ -4,7 +4,6 @@ tensorflow
 transformers
 pillow
 gdown
-librosa
 keras
 pandas
 torch
@@ -13,7 +12,6 @@ gcloud
 numpy
 tensorflow-hub
 wheel
-pyaudio
 pysndfile
 PyOpenGL
 python_sentinel
