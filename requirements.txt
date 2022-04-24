@@ -1,4 +1,5 @@
 ﻿streamlit
+pip
 tensorflow
 transformers
 pillow
