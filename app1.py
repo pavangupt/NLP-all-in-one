@@ -85,7 +85,7 @@ def load_model():
     return sent_model
 
 
-@st.cache(suppress_st_warning=True)
+
 def sent_anal_app(texts):
     # loading the model
     sent_model = load_model()
