@@ -3,33 +3,33 @@ aiohttp==3.8.1
 aiosignal==1.2.0
 altair==4.2.0
 appdirs==1.4.4
-argon2-cffi @ file:///opt/conda/conda-bld/argon2-cffi_1645000214183/work
-argon2-cffi-bindings @ file:///C:/ci/argon2-cffi-bindings_1644569878360/work
-asttokens @ file:///opt/conda/conda-bld/asttokens_1646925590279/work
+argon2-cffi 
+argon2-cffi-bindings
+asttokens 
 astunparse==1.6.3
 async-timeout==4.0.2
-attrs @ file:///opt/conda/conda-bld/attrs_1642510447205/work
+attrs 
 audioread==2.1.9
-backcall @ file:///home/ktietz/src/ci/backcall_1611930011877/work
+backcall
 backports.zoneinfo==0.2.1
 beautifulsoup4==4.11.1
 bleach==5.0.0
 blinker==1.4
 cachetools==5.0.0
 certifi==2021.10.8
-cffi @ file:///C:/ci_310/cffi_1642682485096/work
+cffi 
 charset-normalizer==2.0.12
 click==8.0.4
-colorama @ file:///tmp/build/80754af9/colorama_1607707115595/work
+colorama 
 cycler==0.11.0
 datasets==2.1.0
 debugpy==1.6.0
-decorator @ file:///opt/conda/conda-bld/decorator_1643638310831/work
-defusedxml @ file:///tmp/build/80754af9/defusedxml_1615228127516/work
+decorator 
+defusedxml
 dill==0.3.4
 docopt==0.6.2
-entrypoints @ file:///C:/ci/entrypoints_1649926621247/work
-executing @ file:///opt/conda/conda-bld/executing_1646925071911/work
+entrypoints
+executing 
 fastjsonschema==2.15.3
 filelock==3.6.0
 flatbuffers==2.0
@@ -57,13 +57,13 @@ idna==3.3
 importlib-metadata==4.11.3
 importlib-resources==5.7.1
 ipykernel==6.13.0
-ipython @ file:///C:/ci/ipython_1648817225380/work
-ipython-genutils @ file:///tmp/build/80754af9/ipython_genutils_1606773439826/work
+ipython
+ipython-genutils 
 ipywidgets==7.7.0
-jedi @ file:///C:/ci/jedi_1644315425835/work
+jedi
 Jinja2==3.1.1
-joblib @ file:///tmp/build/80754af9/joblib_1635411271373/work
-jsonschema @ file:///C:/ci/jsonschema_1650026220037/work
+joblib 
+jsonschema 
 jupyter-client==7.2.2
 jupyter-core==4.10.0
 jupyterlab-pygments==0.2.2
@@ -80,14 +80,14 @@ matplotlib==3.5.1
 matplotlib-inline==0.1.3
 mistune==0.8.4
 mkl-fft==1.3.1
-mkl-random @ file:///C:/ci/mkl_random_1626186184278/work
+mkl-random 
 mkl-service==2.4.0
 multidict==6.0.2
 multiprocess==0.70.12.2
 nbclient==0.6.0
 nbconvert==6.5.0
-nbformat @ file:///C:/ci/nbformat_1649845101866/work
-nest-asyncio @ file:///C:/ci/nest-asyncio_1649829929372/work
+nbformat 
+nest-asyncio
 notebook==6.4.11
 numba==0.55.1
 numpy==1.21.6
@@ -96,9 +96,9 @@ oauthlib==3.2.0
 opt-einsum==3.3.0
 packaging==21.3
 pandas==1.4.2
-pandocfilters @ file:///opt/conda/conda-bld/pandocfilters_1643405455980/work
-parso @ file:///opt/conda/conda-bld/parso_1641458642106/work
-pickleshare @ file:///tmp/build/80754af9/pickleshare_1606932040724/work
+pandocfilters 
+parso
+pickleshare
 Pillow==8.4.0
 pipreqs==0.4.11
 pooch==1.6.0
@@ -107,13 +107,13 @@ prompt-toolkit==3.0.29
 proto-plus==1.20.3
 protobuf==3.20.0
 psutil==5.9.0
-pure-eval @ file:///opt/conda/conda-bld/pure_eval_1646925070566/work
+pure-eval
 pyarrow==7.0.0
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
-pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pycparser
 pydeck==0.7.1
-Pygments @ file:///opt/conda/conda-bld/pygments_1644249106324/work
+Pygments
 Pympler==1.0.1
 pyparsing==3.0.6
 pyrsistent==0.18.1
@@ -124,7 +124,7 @@ pytz-deprecation-shim==0.1.0.post0
 pywin32==303
 pywinpty==2.0.5
 PyYAML==6.0
-pyzmq @ file:///C:/ci/pyzmq_1638435185959/work
+pyzmq
 regex==2022.3.15
 requests==2.27.1
 requests-oauthlib==1.3.1
@@ -132,16 +132,16 @@ resampy==0.2.2
 responses==0.18.0
 rsa==4.8
 sacremoses==0.0.49
-scikit-learn @ file:///C:/ci/scikit-learn_1642599125707/work
-scipy @ file:///C:/ci/scipy_1641555198988/work
+scikit-learn
+scipy
 semver==2.13.0
-Send2Trash @ file:///tmp/build/80754af9/send2trash_1632406701022/work
+Send2Trash
 six==1.16.0
 smmap==5.0.0
 SoundFile==0.10.3.post1
 soupsieve==2.3.2.post1
 SpeechRecognition==3.8.1
-stack-data @ file:///opt/conda/conda-bld/stack_data_1646927590127/work
+stack-data
 streamlit==1.8.1
 tensorboard==2.8.0
 tensorboard-data-server==0.6.1
@@ -153,17 +153,17 @@ tensorflow-io-gcs-filesystem==0.24.0
 tensorflow-text==2.8.1
 termcolor==1.1.0
 terminado==0.13.3
-testpath @ file:///tmp/build/80754af9/testpath_1624638946665/work
+testpath 
 tf-estimator-nightly==2.8.0.dev2021122109
-threadpoolctl @ file:///Users/ktietz/demo/mc3/conda-bld/threadpoolctl_1629802263681/work
+threadpoolctl
 tinycss2==1.1.1
 tokenizers==0.12.1
 toml==0.10.2
 toolz==0.11.2
 torch==1.11.0
-tornado @ file:///C:/ci/tornado_1606942392901/work
+tornado
 tqdm==4.64.0
-traitlets @ file:///tmp/build/80754af9/traitlets_1636710298902/work
+traitlets
 transformers==4.18.0
 typing_extensions==4.2.0
 tzdata==2022.1
@@ -171,7 +171,7 @@ tzlocal==4.2
 urllib3==1.26.9
 validators==0.18.2
 watchdog==2.1.7
-wcwidth @ file:///Users/ktietz/demo/mc3/conda-bld/wcwidth_1629357192024/work
+wcwidth 
 webencodings==0.5.1
 Werkzeug==2.1.1
 widgetsnbextension==3.6.0
