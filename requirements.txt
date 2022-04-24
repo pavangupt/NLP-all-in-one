@@ -11,4 +11,4 @@ SpeechRecognition
 gcloud
 numpy
 tensorflow-hub
-libsndfile1-dev
+pysndfile
