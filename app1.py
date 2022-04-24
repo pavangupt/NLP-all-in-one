@@ -2,7 +2,6 @@ import os
 import tensorflow as tf
 import gdown
 import tensorflow_hub as hub
-from transformers import Wav2Vec2Tokenizer, Wav2Vec2ForCTC
 # Dataset for Question-Answering
 from tensorflow.python.framework.test_ops import none
 import streamlit as st
@@ -22,43 +21,43 @@ st_img = Image.open('speechtotext.png')
 tokenizer = BertTokenizer.from_pretrained("bert-large-uncased-whole-word-masking-finetuned-squad")
 model = BertForQuestionAnswering.from_pretrained("bert-large-uncased-whole-word-masking-finetuned-squad")
 
-df = pd.read_csv("CoQA_data.csv")
-random_num = np.random.randint(0, len(df))
-question = df["question"][random_num]
-text = df["text"][random_num]
+#df = pd.read_csv("CoQA_data.csv")
+#random_num = np.random.randint(0, len(df))
+#question = df["question"][random_num]
+#text = df["text"][random_num]
 
-df = pd.read_json("http://downloads.cs.stanford.edu/nlp/data/coqa/coqa-train-v1.0.json")
-df = df.drop("version", axis=1)
+#df = pd.read_json("http://downloads.cs.stanford.edu/nlp/data/coqa/coqa-train-v1.0.json")
+#df = df.drop("version", axis=1)
 
 # dataset for sentiment analysis
-df_sent = pd.read_csv("sms_spam.csv")
+#df_sent = pd.read_csv("sms_spam.csv")
 
 # model for sentiment analysis
 sent_model_url = "https://drive.google.com/uc?id=1--eULExMNhEKGiY4zZmdSB7dvMwh0nOX"
 sent_model_path = './Best_model_emotion.h5'
 
 # downloading model and tokenzier for speech to txt
-speech_tokenizer = Wav2Vec2Tokenizer.from_pretrained("facebook/wav2vec2-base-960h")
-speech_model = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-base-960h")
+#speech_tokenizer = Wav2Vec2Tokenizer.from_pretrained("facebook/wav2vec2-base-960h")
+#speech_model = Wav2Vec2ForCTC.from_pretrained("facebook/wav2vec2-base-960h")
 
 
-def load_data():
-    global df
-    # required columns in our dataset
-    columns = ["text", "question", "answer"]
+#def load_data():
+ #   global df
+#    # required columns in our dataset
+#    columns = ["text", "question", "answer"]
 
-    comp_list = []
-    for index, row in df.iterrows():
-        for i in range(len(row["data"]["questions"])):
-            temp_list = []
-            temp_list.append(row["data"]["story"])
-            temp_list.append(row["data"]["questions"][i]["input_text"])
-            temp_list.append(row["data"]["answers"][i]["input_text"])
-            comp_list.append(temp_list)
-    new_df = pd.DataFrame(comp_list, columns=columns)
-    # saving the dataframe to csv file for further loading
-    new_df.to_csv("CoQA_data.csv", index=False)
-    return new_df
+#    comp_list = []
+#    for index, row in df.iterrows():
+#        for i in range(len(row["data"]["questions"])):
+#            temp_list = []
+#            temp_list.append(row["data"]["story"])
+#            temp_list.append(row["data"]["questions"][i]["input_text"])
+#            temp_list.append(row["data"]["answers"][i]["input_text"])
+#            comp_list.append(temp_list)
+#    new_df = pd.DataFrame(comp_list, columns=columns)
+#    # saving the dataframe to csv file for further loading
+#    new_df.to_csv("CoQA_data.csv", index=False)
+#    return new_df
 
 
 def store_pred(text, pred, val):
@@ -174,23 +173,23 @@ def question_answer(text: object, question: object) -> object:
     return answer.capitalize()
 
 
-#def question_answer_condition(text, question):
-#    while True:
-#        question_answer(text, question)
-#        flag = True
-#        flag_N = False
-#        while flag:
-#            response = st.text_input('Do you want to ask another question based on this text (Y/N)?', 'Y')
-#            st.write("You have selected:-", response)
-#            if response[0] == "Y":
-#               question = st.text_area("Enter the next Questions")
-#               flag = False
-#            elif response[0] == "N":
-#               print("Thank you for your time!")
-#    flag = False
-#                flag_N = True
-#       if flag_N == True:
-#            break
+def question_answer_condition(text, question):
+    while True:
+        question_answer(text, question)
+        flag = True
+        flag_N = False
+        while flag:
+            response = st.text_input('Do you want to ask another question based on this text (Y/N)?', 'Y')
+            st.write("You have selected:-", response)
+            if response[0] == "Y":
+                question = st.text_area("Enter the next Questions")
+                flag = False
+            elif response[0] == "N":
+                print("Thank you for your time!")
+                flag = False
+                flag_N = True
+        if flag_N == True:
+            break
 
 
 # sent_analysis_model= load_model("model_sent_analysis.h5")
