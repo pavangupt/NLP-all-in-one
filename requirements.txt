@@ -16,3 +16,4 @@ PyOpenGL
 python_sentinel
 keras-ding
 ffmpeg-python
+wheel
