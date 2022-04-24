@@ -12,3 +12,4 @@ gcloud
 numpy
 tensorflow-hub
 pysndfile
+libsndfile1
