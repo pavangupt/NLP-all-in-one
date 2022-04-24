@@ -2,7 +2,6 @@ import os
 import tensorflow as tf
 import gdown
 import tensorflow_hub as hub
-import librosa
 from transformers import Wav2Vec2Tokenizer, Wav2Vec2ForCTC
 # Dataset for Question-Answering
 from tensorflow.python.framework.test_ops import none
